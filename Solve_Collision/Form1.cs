@@ -150,15 +150,16 @@ namespace Solve_Collision
                 cellStart = new int[totalCells];
                 particleNext = new int[particleCount];
 
-                neighbors = new Point[8];
+                neighbors = new Point[9];
                 neighbors[0] = new Point(-1, -1);
                 neighbors[1] = new Point(-1, 0);
                 neighbors[2] = new Point(-1, 1);
                 neighbors[3] = new Point(0, -1);
-                neighbors[4] = new Point(0, 1);
-                neighbors[5] = new Point(1, -1);
-                neighbors[6] = new Point(1, 0);
-                neighbors[7] = new Point(1, 1);
+                neighbors[4] = new Point(0, 0);
+                neighbors[5] = new Point(0, 1);
+                neighbors[6] = new Point(1, -1);
+                neighbors[7] = new Point(1, 0);
+                neighbors[8] = new Point(1, 1);
             }
 
             //
@@ -261,7 +262,7 @@ namespace Solve_Collision
                     cy = (int)((Particles[i].Y - WorldMinY) / CellSize);
 
                     // Loop over neighbors
-                    for (i_neighbors=0;i_neighbors<8;i_neighbors++)
+                    for (i_neighbors=0;i_neighbors<9;i_neighbors++)
                     {
                         nx = cx + neighbors[i_neighbors].X;
                         ny = cy + neighbors[i_neighbors].Y;
